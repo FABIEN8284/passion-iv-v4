@@ -7,18 +7,6 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 
-function formatDate(value) {
-  try {
-    return new Intl.DateTimeFormat('fr-FR', {weekday:'long', day:'numeric', month:'long', year:'numeric'}).format(new Date(`${value}T12:00:00`));
-  } catch {
-    return value;
-  }
-}
-
-function escapeHtml(value='') {
-  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
-}
-
 
 /* Menu latéral ----------------------------------------------------------- */
 const menuOpen = qs('#menuOpen');
@@ -79,47 +67,6 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
   qsa('.reveal').forEach(el => observer.observe(el));
 } else {
   qsa('.reveal').forEach(el => el.classList.add('revealed'));
-}
-
-/* Sorties statiques ------------------------------------------------------ */
-const sorties = Array.isArray(window.PASSION_SORTIES) ? window.PASSION_SORTIES : [];
-const sortiesList = qs('#sortiesList');
-const sortiesEmpty = qs('#sortiesEmpty');
-
-function buildICS(item) {
-  if (!item?.date) return null;
-  const clean = (s='') => String(s).replace(/[\\;,\n]/g, ' ');
-  const start = `${item.date.replaceAll('-','')}${item.time ? `T${item.time.replace(':','')}00` : ''}`;
-  let end = `${item.date.replaceAll('-','')}${item.end ? `T${item.end.replace(':','')}00` : ''}`;
-  const allDay = !item.time;
-  const content = [
-    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//PASSION IV//FR','BEGIN:VEVENT',
-    `UID:${clean(item.id || item.date)}@passion-iv`,
-    allDay ? `DTSTART;VALUE=DATE:${start}` : `DTSTART:${start}`,
-    allDay ? `DTEND;VALUE=DATE:${end}` : `DTEND:${end}`,
-    `SUMMARY:${clean(item.title || 'Navigation PASSION IV')}`,
-    `DESCRIPTION:${clean(item.description || '')}`,
-    'LOCATION:Port Canto, Cannes','END:VEVENT','END:VCALENDAR'
-  ].join('\r\n');
-  return `data:text/calendar;charset=utf-8,${encodeURIComponent(content)}`;
-}
-
-if (sortiesList && sorties.length) {
-  sortiesEmpty.hidden = true;
-  sortiesList.innerHTML = sorties.map(item => {
-    const title = escapeHtml(item.title || 'Navigation PASSION IV');
-    const description = escapeHtml(item.description || '');
-    const category = escapeHtml(item.category || 'Navigation');
-    const when = item.date ? formatDate(item.date) : '';
-    const hour = item.time ? ` · ${escapeHtml(item.time)}` : '';
-    const ics = buildICS(item);
-    return `<article class="sortie-card">
-      <div><span class="sortie-cat">${category}</span><h3>${title}</h3><p class="sortie-date">${escapeHtml(when)}${hour}</p><p>${description}</p></div>
-      <div class="sortie-actions">
-        ${ics ? `<a class="text-link" href="${ics}" download="passion-iv.ics">Ajouter à mon agenda</a>` : ''}
-      </div>
-    </article>`;
-  }).join('');
 }
 
 /* Lightbox --------------------------------------------------------------- */
