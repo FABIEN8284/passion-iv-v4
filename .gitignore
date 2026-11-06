@@ -54,3 +54,6 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+
+# generated TypeScript incremental state
+*.tsbuildinfo

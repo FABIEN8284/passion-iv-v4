@@ -1,6 +1,6 @@
 # Déploiement, activation et reprise
 
-## Déploiement Sites de cette V1
+## Déploiement Sites — base historique V2
 
 Identité à conserver : `appgprj_6ace7d08681c8191b997e6a5d73583cc` dans `.openai/hosting.json`.
 Ne pas créer un autre Site lors d'une reprise. Base logique : `DB` ; aucune liaison R2.
@@ -10,7 +10,7 @@ Ne pas créer un autre Site lors d'une reprise. Base logique : `DB` ; aucune lia
 3. Exécuter `node --test tests/core.test.mjs` et `pnpm exec tsc --noEmit`.
 4. Si le schéma a changé, `pnpm run db:generate`, inspecter le nouveau SQL et les métadonnées. Ne jamais réécrire une migration appliquée.
 5. Utiliser `build-site.mjs` pour produire le Worker et son manifeste. Le plugin de compilation Sites est conservé dans `vite.config.ts`.
-6. Configurer les variables serveur secrètes `ADMIN_SETUP_TOKEN` (code aléatoire d'au moins 24 octets) et `RATE_SALT` (sel indépendant). Elles sont déjà configurées pour la V1. Ne pas recréer le code à chaque publication.
+6. Configurer les variables serveur secrètes `ADMIN_SETUP_TOKEN` (code aléatoire d'au moins 24 octets) et `RATE_SALT` (sel indépendant). Elles existaient dans le déploiement historique ; vérifier leur état réel avant toute nouvelle publication. Ne pas recréer le code à chaque publication.
 7. Avec `site-workflow.mjs --project-id <id>`, transmettre les credentials via stdin et les commandes restantes. Le helper vérifie, commit, pousse et crée l'archive de déploiement.
 8. Déployer avec Sites `save_version_and_deploy_private`, en utilisant exactement le commit poussé et l'archive. Sites applique les migrations D1 avant de charger le Worker.
 9. Attendre le statut `succeeded`. Les modifications de variables d'environnement nécessitent aussi un déploiement pour prendre effet.
@@ -39,6 +39,6 @@ La sauvegarde SQL intégrale D1 et sa restauration relèvent d'un accès techniq
 
 ## Migration vers un hébergement différent
 
-Le code source complet et les images optimisées sont livrés. Il faut adapter l'authentification, la liaison `DB` et le pipeline de déploiement ; les instructions SQL métier et le CSS restent réutilisables. Il ne suffit pas de téléverser les fichiers sur un hébergeur statique : il faut un serveur pour les données et les droits.
+Le code source complet et les images optimisées sont versionnés dans GitHub et sauvegardés dans Drive. Il faut adapter l'authentification, la liaison `DB` et le pipeline de déploiement ; les instructions SQL métier et le CSS restent réutilisables. Il ne suffit pas de téléverser les fichiers sur un hébergeur statique : il faut un serveur pour les données et les droits.
 
 Ne pas considérer les quotas gratuits Cloudflare comme les conditions tarifaires automatiques de Sites. Aucun nouvel abonnement nécessaire n'est souscrit par cette livraison.
