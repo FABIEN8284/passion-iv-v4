@@ -1,16 +1,11 @@
 /* Configuration unique ---------------------------------------------------- */
-const WHATSAPP = "33XXXXXXXXX";
 const YOUTUBE_CHANNEL = "https://youtube.com/@chantalpassioniv?si=rc3DKHgRHe3MKu2v";
 
 /* Utilitaires ------------------------------------------------------------- */
 const qs = (selector, root = document) => root.querySelector(selector);
 const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
-const whatsappReady = /^\d{10,15}$/.test(WHATSAPP) && !/X/i.test(WHATSAPP);
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function waUrl(message) {
-  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
-}
 
 function formatDate(value) {
   try {
@@ -24,19 +19,6 @@ function escapeHtml(value='') {
   return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
 }
 
-/* WhatsApp --------------------------------------------------------------- */
-if (whatsappReady) {
-  qsa('[data-whatsapp]').forEach(link => {
-    link.hidden = false;
-    link.href = waUrl(link.dataset.message || 'Bonjour Chantal, je souhaite avoir des informations sur PASSION IV.');
-    link.target = '_blank';
-    link.rel = 'noreferrer';
-  });
-  const contact = qs('#contact');
-  const contactMenu = qs('[data-contact-menu]');
-  if (contact) contact.hidden = false;
-  if (contactMenu) contactMenu.hidden = false;
-}
 
 /* Menu latéral ----------------------------------------------------------- */
 const menuOpen = qs('#menuOpen');
@@ -131,11 +113,9 @@ if (sortiesList && sorties.length) {
     const when = item.date ? formatDate(item.date) : '';
     const hour = item.time ? ` · ${escapeHtml(item.time)}` : '';
     const ics = buildICS(item);
-    const msg = `Bonjour Chantal, je suis intéressé par « ${item.title || 'une navigation PASSION IV'} »${item.date ? ` du ${formatDate(item.date)}` : ''}. Peux-tu me donner les détails ?`;
     return `<article class="sortie-card">
       <div><span class="sortie-cat">${category}</span><h3>${title}</h3><p class="sortie-date">${escapeHtml(when)}${hour}</p><p>${description}</p></div>
       <div class="sortie-actions">
-        ${whatsappReady ? `<a class="button button-dark" href="${waUrl(msg)}" target="_blank" rel="noreferrer">Je suis intéressé</a>` : ''}
         ${ics ? `<a class="text-link" href="${ics}" download="passion-iv.ics">Ajouter à mon agenda</a>` : ''}
       </div>
     </article>`;
