@@ -1,0 +1,4 @@
+export type Nav={id:string;title:string;date:string|null;time:string|null;category:string;description:string;image:string|null;capacity:number|null;status:string;demo:number;positioned:number};
+export type Participation={id:string;navigationId:string;firstName:string;lastName:string;phone:string;partySize:number;message:string;createdAt:string};
+export function dateLabel(date:string|null){return date?new Intl.DateTimeFormat('fr-FR',{weekday:'long',day:'numeric',month:'long',timeZone:'Europe/Paris'}).format(new Date(date+'T12:00:00Z')):'Date à définir';}
+export async function api<T=unknown>(url:string,data?:unknown):Promise<T>{const r=await fetch(url,{cache:'no-store',...(data?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}:{})});const v=await r.json() as T & {error?:string};if(!r.ok)throw new Error(v.error||'Connexion interrompue. Réessaie.');return v;}

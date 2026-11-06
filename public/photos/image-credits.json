@@ -1,0 +1,18 @@
+[
+  {
+    "name": "cannes",
+    "source": "https://commons.wikimedia.org/wiki/File:Panoramic_of_Cannes.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Panoramic_of_Cannes.JPG",
+    "author": "Copyleft",
+    "license": "CC BY-SA 4.0",
+    "changes": "Redimensionnement, compression WebP et recadrage visuel responsive. Les adaptations de cannes restent sous CC BY-SA 4.0."
+  },
+  {
+    "name": "canto",
+    "source": "https://commons.wikimedia.org/wiki/File:Port_Pierre-Canto_(Cannes)_en_avril_2023.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Port_Pierre-Canto_%28Cannes%29_en_avril_2023.JPG",
+    "author": "Benoît Prieur",
+    "license": "CC0 1.0",
+    "changes": "Redimensionnement, compression WebP et recadrage visuel responsive. Les adaptations de cannes restent sous CC BY-SA 4.0."
+  }
+]

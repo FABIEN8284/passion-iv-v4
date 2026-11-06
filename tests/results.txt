@@ -1,0 +1,29 @@
+✔ validation prénom requis (2.825885ms)
+✔ validation téléphone (0.515466ms)
+✔ validation taille entière positive (0.732693ms)
+✔ normalisation téléphone (0.774235ms)
+✔ refus honeypot (3.978129ms)
+✔ validation navigation date, heure, catégorie, photo (1.528882ms)
+✔ création et modification navigation (1.316862ms)
+✔ création participation visible administration (0.887456ms)
+✔ aucune donnée personnelle publique (2.034963ms)
+✔ capacité atomique et complet (0.945333ms)
+✔ deux demandes concurrentes ne dépassent pas la capacité (0.756339ms)
+✔ statut annulé bloque une inscription (2.250057ms)
+✔ statut complet manuel bloque une inscription (0.635617ms)
+✔ réessai idempotent et doublon téléphone (0.842828ms)
+✔ correction, suppression et places libérées (1.185084ms)
+✔ correction refuse dépassement capacité (0.63084ms)
+✔ capacité ne peut pas être réduite sous les inscrits (0.572632ms)
+✔ administration refusée aux anonymes et autres comptes (0.430799ms)
+✔ activation sécurisée et unique (0.741546ms)
+✔ limitation des tentatives (1.128629ms)
+✔ démonstration explicite et enregistrement persistant (0.669758ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 109.576042
