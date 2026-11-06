@@ -1,0 +1,58 @@
+name: Build Hanse 315 specification-only PDF
+
+on:
+  push:
+    branches:
+      - TEST-RICH
+    paths:
+      - .github/workflows/build-hanse-spec.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout TEST-RICH
+        uses: actions/checkout@v4
+        with:
+          ref: TEST-RICH
+          fetch-depth: 0
+
+      - name: Download official Hanse document
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 \
+            "https://hanseyachts.hr/images/ownership/yacht-annexes/H315.25_PL_EU_20250728.pdf" \
+            --output /tmp/hanse315.pdf
+
+      - name: Keep pages 1 to 3 only
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet pypdf
+          mkdir -p assets/docs
+          python - <<'PY'
+          from pypdf import PdfReader, PdfWriter
+          src = PdfReader('/tmp/hanse315.pdf')
+          if len(src.pages) < 4:
+              raise SystemExit(f'Unexpected source page count: {len(src.pages)}')
+          out = PdfWriter()
+          for i in range(3):
+              out.add_page(src.pages[i])
+          with open('assets/docs/hanse-315-specification-pages-1-3.pdf', 'wb') as f:
+              out.write(f)
+          check = PdfReader('assets/docs/hanse-315-specification-pages-1-3.pdf')
+          if len(check.pages) != 3:
+              raise SystemExit('Output is not exactly 3 pages')
+          print('Created 3-page specification-only PDF')
+          PY
+
+      - name: Commit generated PDF
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/docs/hanse-315-specification-pages-1-3.pdf
+          git commit -m "TEST-RICH: ajouter fiche Hanse 315 pages 1 a 3"
+          git push origin HEAD:TEST-RICH
