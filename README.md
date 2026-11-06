@@ -1,32 +1,32 @@
-# PASSION IV — site vitrine GitHub Pages
+# PASSION IV — version statique riche
 
-Version statique officielle préparée pour remplacer l'ancienne application ChatGPT Sites.
+Site vitrine 100 % statique destiné à GitHub Pages.
 
-## Principe
-- site vitrine simple ;
-- photos, présentation du bateau, Chantal, repères débutants et informations pratiques ;
-- contact direct avec Chantal ;
-- aucune inscription en ligne ;
-- aucun paiement ;
-- aucune base de données ;
-- aucun espace administrateur ;
-- aucune dépendance Cloudflare / D1 / Worker.
+## Structure
+- `index.html` : page principale.
+- `assets/css/styles.css` : styles.
+- `assets/js/site.js` : menu, WhatsApp, sorties, galerie/lightbox, animations.
+- `assets/data/sorties.js` : prochaines navigations confirmées uniquement.
+- `assets/images/` : photographies WebP sélectionnées, favicon et image de partage.
+- `404.html` : page 404 dédiée.
+- `mentions-legales.html`, `confidentialite.html` : pages de travail à finaliser.
+- `CONTENU-A-COMPLETER.md` : informations attendues de Chantal.
+- `docs/` : inventaire de l'ancien site et compte rendu.
 
-## Organisation
-- `main` : version stable prête à être publiée ;
-- `TEST` : branche de préparation avant publication ;
-- anciennes versions applicatives : conservées dans les branches d'archive ;
-- Google Drive : originaux, sauvegardes ZIP, documentation et historique.
+## Contact WhatsApp
+Une seule variable pilote tous les boutons :
+
+```js
+const WHATSAPP = "33XXXXXXXXX";
+```
+
+Tant que cette valeur n'est pas remplacée par un numéro valide, tous les boutons et la section Contact restent masqués.
+
+## Sorties
+Modifier `window.PASSION_SORTIES` dans `assets/data/sorties.js`. Ne renseigner que des dates réellement confirmées. Le site génère ensuite les cartes, le message WhatsApp pré-rempli et le fichier `.ics` côté navigateur.
+
+## Fonctionnement local
+Le site peut être ouvert directement via `index.html`. Aucun build, serveur, framework ou installation n'est nécessaire.
 
 ## Publication
-GitHub Pages doit publier `main` depuis `/ (root)`.
-
-Avant publication :
-1. renseigner le lien WhatsApp réel ;
-2. vérifier ordinateur et mobile ;
-3. décider de la visibilité du dépôt ;
-4. activer GitHub Pages ;
-5. vérifier l'URL publique ;
-6. connecter ensuite seulement un nom de domaine.
-
-Aucune publication ni modification de visibilité sans validation explicite.
+Ne pas publier, fusionner dans `main`, changer la visibilité du dépôt ou activer GitHub Pages sans validation explicite.
