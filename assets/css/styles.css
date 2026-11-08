@@ -931,3 +931,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .source-line-cta a{transition:none}
   .cannes-showcase{--sunset-progress:.55}
 }
+
+
+/* TEST-RICH — morphing photo réel jour -> coucher de soleil ---------------- */
+.cannes-sunset{
+  filter:none!important;
+}
+.cannes-sunset-light{
+  display:none!important;
+}
+.cannes-day,
+.cannes-sunset{
+  object-position:center center!important;
+}
+.cannes-showcase{
+  background:#102d3d;
+}
