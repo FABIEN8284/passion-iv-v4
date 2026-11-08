@@ -436,122 +436,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .practical-icon,
   .lesson-resources a,
   .lesson-resources a::before{transition:none}
-}
-
-
-/* TEST-RICH — lot validé : morphing Cannes + zooms renforcés + pictos SVG ---- */
-.practical-icon svg{
-  width:31px;
-  height:31px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2.35;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-/* Hero première page : zoom plus franc */
-.hero-media img{
-  animation:hero-zoom-final 12s ease-in-out infinite alternate;
-  transform-origin:52% 48%;
-  will-change:transform;
-}
-@keyframes hero-zoom-final{
-  from{transform:scale(1.035) translate3d(0,0,0)}
-  to{transform:scale(1.16) translate3d(1.1%,-.8%,0)}
-}
-
-/* Voilier de transition : zoom nettement renforcé */
-.zoom-navigation img{
-  animation:navigation-zoom-final 9.5s ease-in-out infinite alternate;
-  transform-origin:52% 48%;
-}
-@keyframes navigation-zoom-final{
-  from{transform:scale(1.035) translate3d(-.5%,.2%,0)}
-  to{transform:scale(1.25) translate3d(1.8%,-1.5%,0)}
-}
-
-/* Cannes : même géométrie, passage jour -> coucher de soleil au survol */
-.cannes-showcase{
-  overflow:hidden;
-}
-.cannes-morph{
-  position:relative;
-  width:100%;
-  height:clamp(300px,34vw,470px);
-  overflow:hidden;
-  background:#173d55;
-}
-.cannes-morph > img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 58%;
-  transition:
-    opacity 1.15s cubic-bezier(.2,.7,.2,1),
-    filter 1.15s cubic-bezier(.2,.7,.2,1),
-    transform 1.4s cubic-bezier(.2,.7,.2,1);
-  will-change:opacity,filter,transform;
-}
-.cannes-day{
-  z-index:1;
-  opacity:1;
-  filter:saturate(1.03) contrast(1.055) brightness(1.02);
-  transform:scale(1.035);
-}
-.cannes-sunset{
-  z-index:2;
-  opacity:0;
-  filter:
-    sepia(.62)
-    saturate(1.95)
-    hue-rotate(338deg)
-    contrast(1.08)
-    brightness(.88);
-  transform:scale(1.085);
-}
-.cannes-sunset-light{
-  position:absolute;
-  z-index:3;
-  inset:0;
-  opacity:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 76% 27%,rgba(255,236,160,.96) 0 1.3%,rgba(255,154,58,.48) 2%,transparent 17%),
-    linear-gradient(180deg,rgba(255,102,47,.36) 0%,rgba(242,133,61,.20) 37%,rgba(22,63,91,.05) 62%,rgba(8,32,48,.22) 100%);
-  mix-blend-mode:screen;
-  transition:opacity 1.15s cubic-bezier(.2,.7,.2,1);
-}
-.cannes-showcase:hover .cannes-day{
-  opacity:.08;
-  filter:saturate(.9) brightness(.8);
-  transform:scale(1.105);
-}
-.cannes-showcase:hover .cannes-sunset{
-  opacity:1;
-  transform:scale(1.13) translate3d(.6%,-.4%,0);
-}
-.cannes-showcase:hover .cannes-sunset-light{
-  opacity:.88;
-}
-.cannes-showcase:hover figcaption{
-  background:rgba(70,34,28,.72);
-  border-color:rgba(255,205,150,.28);
-}
-.cannes-showcase > img{display:none!important}
-
-@media(max-width:760px){
-  .cannes-morph{height:58vw;min-height:240px}
-}
-@media(prefers-reduced-motion:reduce){
-  .hero-media img,.zoom-navigation img{animation:none;transform:none}
-  .cannes-morph > img,.cannes-sunset-light{transition:none}
-}
-
-
-/* TEST-RICH — tutos V2 : cartes éditoriales premium ------------------------- */
+}/* TEST-RICH — tutos V2 : cartes éditoriales premium ------------------------- */
 .lesson-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -860,55 +745,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
     linear-gradient(0deg,rgba(3,17,26,.48),transparent 48%);
 }
 
-/* 02 — morphing Cannes piloté par le scroll, plus rapide et +30 % plus marqué */
-.cannes-showcase{
-  --sunset-progress:0;
-}
-.cannes-morph > img,
-.cannes-sunset-light{
-  transition:none!important;
-}
-.cannes-day{
-  opacity:calc(1 - (var(--sunset-progress) * .94))!important;
-  filter:
-    saturate(calc(1.03 - (var(--sunset-progress) * .12)))
-    contrast(1.055)
-    brightness(calc(1.02 - (var(--sunset-progress) * .16)))!important;
-  transform:
-    scale(calc(1.035 + (var(--sunset-progress) * .105)))
-    translate3d(calc(var(--sunset-progress) * -.6%),calc(var(--sunset-progress) * -.25%),0)!important;
-}
-.cannes-sunset{
-  opacity:var(--sunset-progress)!important;
-  filter:
-    sepia(calc(.68 + (var(--sunset-progress) * .16)))
-    saturate(calc(2.05 + (var(--sunset-progress) * .70)))
-    hue-rotate(336deg)
-    contrast(calc(1.08 + (var(--sunset-progress) * .08)))
-    brightness(calc(.84 + (var(--sunset-progress) * .12)))!important;
-  transform:
-    scale(calc(1.075 + (var(--sunset-progress) * .095)))
-    translate3d(calc(var(--sunset-progress) * .8%),calc(var(--sunset-progress) * -.55%),0)!important;
-}
-.cannes-sunset-light{
-  opacity:calc(var(--sunset-progress) * .98)!important;
-  background:
-    radial-gradient(circle at 76% 27%,rgba(255,245,178,.98) 0 1.5%,rgba(255,161,61,.70) 2.8%,rgba(255,102,47,.18) 10%,transparent 21%),
-    linear-gradient(180deg,rgba(255,87,38,.48) 0%,rgba(244,128,55,.31) 35%,rgba(29,68,94,.08) 63%,rgba(8,32,48,.26) 100%);
-}
-.cannes-showcase:hover .cannes-day,
-.cannes-showcase:hover .cannes-sunset,
-.cannes-showcase:hover .cannes-sunset-light{
-  /* Le scroll pilote désormais l'effet : pas de saut au survol. */
-}
-.cannes-showcase figcaption{
-  transition:background .18s ease,border-color .18s ease;
-}
-.cannes-showcase.is-sunset figcaption{
-  background:rgba(70,34,28,.76);
-  border-color:rgba(255,205,150,.35);
-}
-
 @media(max-width:980px){
   .hero-content{
     padding-right:42vw;
@@ -929,21 +765,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 }
 @media(prefers-reduced-motion:reduce){
   .source-line-cta a{transition:none}
-  .cannes-showcase{--sunset-progress:.55}
 }
 
-
-/* TEST-RICH — morphing photo réel jour -> coucher de soleil ---------------- */
-.cannes-sunset{
-  filter:none!important;
-}
-.cannes-sunset-light{
-  display:none!important;
-}
-.cannes-day,
-.cannes-sunset{
-  object-position:center center!important;
-}
-.cannes-showcase{
-  background:#102d3d;
+/* TEST-RICH — correction ciblée : voilier décalé vers la droite */
+@media(min-width:761px){
+  .hero-media img{object-position:62% 48%;}
 }
