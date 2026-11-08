@@ -767,7 +767,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .source-line-cta a{transition:none}
 }
 
-/* TEST-RICH — correction ciblée : voilier décalé vers la droite */
+/* TEST-RICH — cadrages validés à contrôler visuellement */
+.photo-break img{object-position:center 72%;}
 @media(min-width:761px){
-  .hero-media img{object-position:62% 48%;}
+  /* Déplacer le contenu de la photo vers la droite afin de dégager le texte à gauche. */
+  .hero-media img{object-position:32% 48%;}
 }
