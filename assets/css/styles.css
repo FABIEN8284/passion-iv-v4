@@ -787,3 +787,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   font:500 23px/1 var(--serif);
   color:#f0d5bd;
 }
+
+
+/* TEST-RICH — hero V2 : texte dégagé, voilier à droite, lumière progressive */
+@media(min-width:761px){
+  .hero-media img{
+    object-position:18% 48%;
+  }
+  .hero-shade{
+    background:
+      linear-gradient(90deg,
+        rgba(2,15,24,.88) 0%,
+        rgba(2,15,24,.76) 24%,
+        rgba(2,15,24,.52) 39%,
+        rgba(2,15,24,.24) 50%,
+        rgba(2,15,24,.07) 61%,
+        rgba(2,15,24,0) 74%),
+      linear-gradient(0deg,rgba(3,17,26,.30),transparent 42%);
+  }
+}
