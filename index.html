@@ -1,41 +1,500 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PASSION IV — Cannes · Port Canto · Îles de Lérins</title>
-<meta name="description" content="PASSION IV, Hanse 315 basé à Cannes. Naviguer, apprendre et partager au départ de Port Canto.">
-<meta name="theme-color" content="#0c3b67">
-<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-<style>
-:root{--bg:#f4f7fb;--paper:#fff;--ink:#13283d;--muted:#5c7084;--line:#d9e3ed;--blue:#0c3b67;--blue2:#126bb1;--soft:#eaf3fb;--r:22px;--shadow:0 18px 45px rgba(12,59,103,.11);--c:min(1160px,calc(100vw - 32px))}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:auto}.container{width:var(--c);margin:auto}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:99}
-header.site{position:sticky;top:0;z-index:50;background:rgba(244,247,251,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:850;letter-spacing:.06em;line-height:1}.brand em{font-family:Georgia,serif}.brand small{display:block;margin-top:7px;font-size:.67rem;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}.links{display:flex;gap:22px;align-items:center}.links a{font-weight:650;color:#274761}.links .cta{background:var(--blue);color:#fff;padding:10px 16px;border-radius:999px}.menu{display:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:700}
-.hero{min-height:calc(100svh - 74px);display:grid;color:#fff;background:#092744;overflow:hidden}.hero>*{grid-area:1/1}.hero img{height:100%;object-fit:cover;object-position:center 56%}.shade{background:linear-gradient(100deg,rgba(5,18,32,.82),rgba(6,37,66,.42) 58%,rgba(6,37,66,.12))}.hero .content{position:relative;z-index:2;align-self:center;padding:64px 0;max-width:690px}.eyebrow{margin:0 0 13px;font-size:.76rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2)}.hero .eyebrow{color:#dceafb}.hero h1{margin:0;font-size:clamp(3.2rem,10vw,6.4rem);line-height:.92;letter-spacing:.04em}.hero h1 em{font-family:Georgia,serif;font-weight:500}.hero .lead{font-size:clamp(1.15rem,2.5vw,1.55rem);max-width:38rem;color:#eef6fd}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 20px;border-radius:999px;font-weight:750}.primary{background:#fff;color:var(--blue)}.secondary{border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.08);color:#fff}.note{color:#d9e8f5;max-width:42rem;margin-top:18px}
-section{padding:84px 0}.white{background:#fff;border-block:1px solid var(--line)}.alt{background:#edf3f8}.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;margin:0 0 18px}p{color:#38546e;margin:0 0 14px}.photo{border-radius:var(--r);overflow:hidden;background:#dae7f1;box-shadow:var(--shadow)}.photo img{height:100%;object-fit:cover}.tall{min-height:480px}.tall img{min-height:480px}.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}.checks li{padding-left:27px;position:relative;color:#2f506c}.checks li:before{content:"✓";position:absolute;left:0;color:var(--blue2);font-weight:900}
-.heading{display:flex;justify-content:space-between;align-items:end;gap:26px;margin-bottom:28px}.heading>p{max-width:440px}.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.spec{background:#fff;border:1px solid var(--line);border-radius:17px;padding:21px}.spec span{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;font-weight:800}.spec strong{display:block;color:var(--blue);font-size:1.8rem;margin:.3rem 0}.spec small{color:#56728b}.notice{background:var(--soft);border:1px solid #cfe0f0;border-radius:17px;padding:19px 21px;margin-top:20px}.notice a{font-weight:750;color:var(--blue)}
-.gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:15px;grid-auto-rows:250px}.gallery figure{margin:0;position:relative;border-radius:18px;overflow:hidden;background:#dbe7f0;box-shadow:var(--shadow)}.gallery img{height:100%;object-fit:cover}.gallery .big{grid-row:span 2}.gallery .wide{grid-column:span 2}.gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(8,35,59,.74);color:#fff;border-radius:999px;padding:8px 12px;font-size:.88rem}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.card h3{margin:0 0 10px;color:#173b5d}.card ul{padding-left:18px;margin:0}.card li{margin-bottom:8px;color:#38546e}.practical{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
-.contact{background:#0f2d49;color:#fff}.contact h2,.contact p{color:#fff}.contact .eyebrow{color:#a9d2f4}.contactbox{background:#fff;color:var(--ink);border-radius:var(--r);padding:26px}.contactbox p{color:#38546e}.row{display:flex;justify-content:space-between;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.row span{color:var(--muted)}.disabled{opacity:.55;pointer-events:none}
-footer{background:#0b2238;color:#dce8f3;padding:36px 0 22px}footer p,footer a{color:#dce8f3}.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px}.bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;margin-top:22px}
-@media(max-width:900px){.grid2,.foot{grid-template-columns:1fr}.specs,.cards{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.gallery .big{grid-row:auto}.gallery .wide{grid-column:span 2}.heading{align-items:start;flex-direction:column}}
-@media(max-width:720px){.menu{display:block}.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:#f4f7fb;padding:14px 16px;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:8px}.links .cta{text-align:center}.hero{min-height:82svh}.hero .content{padding:50px 0}.buttons{flex-direction:column;align-items:start}section{padding:62px 0}.specs,.cards,.practical,.gallery{grid-template-columns:1fr}.gallery .wide{grid-column:auto}.gallery figure{min-height:250px}.tall,.tall img{min-height:320px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PASSION IV — Naviguer, apprendre et partager à Cannes</title>
+  <meta name="description" content="PASSION IV, Hanse 315 basé à Port Canto à Cannes. Découvrir le voilier, l'esprit à bord, les navigations vers les Îles de Lérins et les repères pour débuter.">
+  <meta name="theme-color" content="#0b2434">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PASSION IV — Cannes · Port Canto · Îles de Lérins">
+  <meta property="og:description" content="Un Hanse 315, la Méditerranée devant soi.">
+  <meta property="og:image" content="assets/images/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PASSION IV — Cannes · Port Canto">
+  <meta name="twitter:description" content="Naviguer, apprendre et partager au départ de Cannes.">
+  <meta name="twitter:image" content="assets/images/share.jpg">
+  <!-- Canonical à ajouter après validation de l'URL publique définitive. -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="64x64">
+  <link rel="preload" as="image" href="assets/images/hero-approved-final.png" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"PASSION IV",
+    "description":"PASSION IV, Hanse 315 basé à Port Canto à Cannes. Naviguer, apprendre et partager.",
+    "inLanguage":"fr-FR",
+    "about":{"@type":"Thing","name":"PASSION IV — Hanse 315"}
+  }
+  </script>
 </head>
 <body>
-<a class="skip" href="#contenu">Aller au contenu</a>
-<header class="site"><div class="container nav"><a class="brand" href="#top">PASSION <em>IV</em><small>Cannes · Port Canto</small></a><button class="menu" aria-expanded="false">Menu</button><nav class="links" aria-label="Navigation"><a href="#experience">L’expérience</a><a href="#voilier">Le voilier</a><a href="#galerie">Galerie</a><a href="#debuter">Débuter</a><a href="#pratique">Pratique</a><a class="cta" href="#contact">Contact</a></nav></div></header>
-<main id="contenu">
-<section class="hero" id="top"><img src="assets/images/hero-sailing.webp" alt="PASSION IV sous voile au large de Cannes"><div class="shade"></div><div class="container content"><p class="eyebrow">Cannes · Port Canto · Îles de Lérins</p><h1>PASSION <em>IV</em></h1><p class="lead">Un voilier à taille humaine pour <strong>naviguer</strong>, <strong>apprendre</strong> et <strong>partager</strong> au départ de Cannes.</p><div class="buttons"><a class="btn primary" href="#contact">Contacter Chantal</a><a class="btn secondary" href="#galerie">Voir les photos</a></div><p class="note">Les sorties et disponibilités se confirment directement avec Chantal, simplement, sans réservation en ligne.</p></div></section>
-<section class="white"><div class="container grid2"><div><p class="eyebrow">L’esprit PASSION IV</p><h2>Prendre le large, sans compliquer les choses.</h2></div><div><p>PASSION IV est un Hanse 315 basé à <strong>Port Canto, à Cannes</strong>. L’idée est simple : partager des navigations conviviales, faire découvrir le bateau, progresser ensemble et profiter de la Méditerranée.</p><p>Tu trouveras ici l’essentiel : le voilier, l’ambiance à bord, quelques repères pour débuter et le moyen le plus simple de contacter Chantal.</p></div></div></section>
-<section id="experience"><div class="container grid2"><div><p class="eyebrow">L’expérience</p><h2>Depuis Cannes, cap sur la baie et les Lérins.</h2><p>Au bout de la Croisette, Port Canto est le point de départ. On largue les amarres, la baie s’ouvre, puis viennent la côte, les îles, les eaux claires et les moments de pause au mouillage.</p><ul class="checks"><li>Départ de Port Canto, à Cannes</li><li>Navigations adaptées à la météo et au niveau de l’équipage</li><li>Ambiance conviviale, découverte et progression</li><li>Contact direct avec Chantal pour organiser la sortie</li></ul></div><div class="photo tall"><img src="assets/images/gallery-islands.webp" alt="Paysage des îles de Lérins vu depuis la mer"></div></div></section>
-<section class="alt" id="chantal"><div class="container grid2"><div class="photo"><img src="assets/images/gallery-details.webp" alt="Détails de la vie à bord de PASSION IV"></div><div><p class="eyebrow">Chantal</p><h2>Une passion de la voile, et l’envie de la transmettre.</h2><p>Passionnée depuis l’enfance, Chantal navigue sur différents supports depuis de nombreuses années. Avec PASSION IV, elle souhaite accueillir, partager son expérience et aider chacun à trouver sa place à bord.</p><p>Débutants, curieux et équipiers plus habitués peuvent se retrouver autour de la même envie : comprendre un peu mieux la voile et vivre une belle sortie en mer.</p><p><a href="https://youtube.com/@chantalpassioniv?si=rc3DKHgRHe3MKu2v" target="_blank" rel="noreferrer"><strong>Voir la chaîne YouTube ↗</strong></a></p></div></div></section>
-<section id="voilier"><div class="container"><div class="heading"><div><p class="eyebrow">Le voilier</p><h2>PASSION IV, Hanse 315</h2></div><p>Un voilier à taille humaine, agréable pour découvrir la navigation et partager du temps à bord.</p></div><div class="specs"><article class="spec"><span>Longueur</span><strong>9,62 m</strong><small>valeur du modèle Hanse 315</small></article><article class="spec"><span>Largeur</span><strong>3,35 m</strong><small>voilier habitable compact</small></article><article class="spec"><span>Tirant d’eau</span><strong>1,85 m</strong><small>configuration déclarée</small></article><article class="spec"><span>Motorisation</span><strong>21 ch</strong><small>Yanmar déclaré</small></article><article class="spec"><span>Aménagement</span><strong>2 cabines</strong><small>carré, cuisine, WC marin</small></article><article class="spec"><span>Programme</span><strong>Journée</strong><small>baie de Cannes et Lérins selon météo</small></article></div><div class="notice"><p><strong>Repère :</strong> les caractéristiques présentent le modèle et les éléments communiqués pour PASSION IV. La configuration exacte se confirme à bord.</p><a href="https://hanseyachts.hr/images/ownership/yacht-annexes/H315.25_PL_EU_20250728.pdf" target="_blank" rel="noreferrer">Documentation Hanse 315 ↗</a></div></div></section>
-<section class="alt" id="galerie"><div class="container"><div class="heading"><div><p class="eyebrow">Galerie</p><h2>PASSION IV en images</h2></div><p>Une sélection recentrée sur l’extérieur, l’intérieur, l’ambiance et les Lérins.</p></div><div class="gallery"><figure class="big"><img src="assets/images/gallery-drone.webp" alt="PASSION IV vu du ciel"><figcaption>Vue aérienne</figcaption></figure><figure><img src="assets/images/gallery-sailing.webp" alt="PASSION IV sous voile"><figcaption>Sous voile</figcaption></figure><figure><img src="assets/images/gallery-interior.webp" alt="Le carré de PASSION IV"><figcaption>Le carré</figcaption></figure><figure><img src="assets/images/gallery-details.webp" alt="Ambiance à bord"><figcaption>À bord</figcaption></figure><figure class="wide"><img src="assets/images/gallery-islands.webp" alt="Les îles de Lérins"><figcaption>Les Lérins</figcaption></figure></div></div></section>
-<section id="debuter"><div class="container"><div class="heading"><div><p class="eyebrow">Débuter à bord</p><h2>Quelques repères avant une première sortie</h2></div><p>Pas besoin de tout savoir. Quelques mots et quelques habitudes suffisent pour commencer.</p></div><div class="cards"><article class="card"><h3>Se repérer</h3><ul><li><strong>Proue</strong> : l’avant ; <strong>poupe</strong> : l’arrière.</li><li><strong>Bâbord</strong> : gauche ; <strong>tribord</strong> : droite, face à l’avant.</li><li>Le <strong>cockpit</strong> est l’espace extérieur de vie et de manœuvre.</li></ul></article><article class="card"><h3>Comprendre le vent</h3><ul><li>Un voilier ne va pas directement face au vent.</li><li>Plus on s’éloigne de son axe, plus on ouvre les voiles.</li><li>Le programme dépend toujours de la météo.</li></ul></article><article class="card"><h3>Participer en sécurité</h3><ul><li>Écouter d’abord, agir ensuite.</li><li>Ne jamais mettre mains ou pieds entre bateau et quai.</li><li>En cas de doute, on demande.</li></ul></article></div></div></section>
-<section class="alt" id="pratique"><div class="container"><div class="heading"><div><p class="eyebrow">Infos pratiques</p><h2>Avant de venir</h2></div><p>Le rendez-vous et le programme exact se confirment directement avec Chantal.</p></div><div class="practical"><article class="card"><h3>Départ</h3><p>PASSION IV est basé à <strong>Port Canto, Cannes</strong>. Le point précis est communiqué avant la sortie.</p></article><article class="card"><h3>Tenue</h3><p>Chaussures qui accrochent, vêtements confortables, protection contre le vent et le soleil.</p></article><article class="card"><h3>À emporter</h3><p>Un petit sac souple, de l’eau et l’essentiel pour la journée.</p></article><article class="card"><h3>Organisation</h3><p>Les dates et disponibilités sont communiquées directement par Chantal, notamment via WhatsApp.</p></article></div></div></section>
-<section class="contact" id="contact"><div class="container grid2"><div><p class="eyebrow">Contact</p><h2>Le plus simple : un message direct.</h2><p>Pour connaître les prochaines sorties ou poser une question, contacte directement Chantal.</p><p>Les sorties se préparent directement avec elle, sans réservation ni paiement sur le site.</p></div><div class="contactbox"><div class="row"><span>WhatsApp</span><strong>Numéro à renseigner avant publication</strong></div><div class="row"><span>YouTube</span><a href="https://youtube.com/@chantalpassioniv?si=rc3DKHgRHe3MKu2v" target="_blank" rel="noreferrer"><strong>@chantalpassioniv ↗</strong></a></div><div class="row"><span>Base</span><strong>Port Canto · Cannes</strong></div><div class="buttons"><a class="btn primary disabled" href="#contact" aria-disabled="true">Lien WhatsApp à renseigner</a></div></div></div></section>
-</main>
-<footer><div class="container foot"><div><p><strong>PASSION IV</strong></p><p>Naviguer, apprendre et partager au départ de Cannes.</p></div><div><p><strong>Navigation</strong></p><p>Cannes · Port Canto · baie de Cannes · Îles de Lérins.</p></div><div><p><strong>Contact</strong></p><p>Disponibilités et rendez-vous directement avec Chantal.</p></div></div><div class="container bottom"><span>© <span id="year"></span> PASSION IV</span><a href="#contact">Contact</a><a href="#top">Haut de page ↑</a></div></footer>
-<script>const b=document.querySelector(".menu"),n=document.querySelector(".links");b&&n&&b.addEventListener("click",()=>{const o=n.classList.toggle("open");b.setAttribute("aria-expanded",String(o))});document.querySelectorAll(".links a").forEach(a=>a.addEventListener("click",()=>n?.classList.remove("open")));document.getElementById("year").textContent=String(new Date().getFullYear());</script>
-</body></html>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="PASSION IV, retour en haut">
+      <span>PASSION <em>IV</em></span>
+      <small>Cannes · Port Canto</small>
+    </a>
+    <button class="menu-tab" id="menuOpen" type="button" aria-expanded="false" aria-controls="siteMenu">
+      <span class="menu-tab-lines" aria-hidden="true"><i></i><i></i></span>
+      <span>Menu</span>
+    </button>
+  </header>
+
+  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+  <aside class="menu-drawer" id="siteMenu" aria-hidden="true" aria-label="Navigation principale">
+    <div class="menu-head">
+      <div><strong>PASSION IV</strong><small>Navigation</small></div>
+      <button class="icon-button" id="menuClose" type="button" aria-label="Fermer le menu">×</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#experience"><span>01</span> L'expérience</a>
+      <details>
+        <summary><span>02</span> Les navigations</summary>
+        <div class="submenu">
+          <a href="#deroule">Une sortie, simplement</a>
+          <a href="#pratique">Préparer sa venue</a>
+        </div>
+      </details>
+      <details>
+        <summary><span>03</span> PASSION IV</summary>
+        <div class="submenu">
+          <a href="#voilier">Le Hanse 315</a>
+          <a href="#caracteristiques">Caractéristiques</a>
+          <a href="#galerie">Cockpit & intérieur</a>
+        </div>
+      </details>
+      <a href="#chantal"><span>04</span> Chantal</a>
+      <a href="#galerie"><span>05</span> Galerie</a>
+      <details>
+        <summary><span>06</span> Débuter à bord</summary>
+        <div class="submenu">
+          <a href="#debuter">Les 10 repères</a>
+          <a href="#debuter">Vocabulaire</a>
+          <a href="#debuter">Vent & manœuvres</a>
+          <a href="#faq">FAQ première sortie</a>
+        </div>
+      </details>
+      <a href="#pratique"><span>08</span> Infos pratiques</a>
+    </nav>
+    <div class="menu-foot">
+      <a href="https://youtube.com/@chantalpassioniv?si=rc3DKHgRHe3MKu2v" target="_blank" rel="noreferrer">YouTube ↗</a>
+      <span>Cannes · Méditerranée</span>
+    </div>
+  </aside>
+
+  <main id="contenu">
+    <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero-media">
+        <img src="assets/images/hero-approved-final.png" width="1672" height="941" alt="PASSION IV sous voile au large des Îles de Lérins" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="kicker light">Cannes · Port Canto · Îles de Lérins</p>
+        <h1 id="hero-title">PASSION <em>IV</em></h1>
+        <p class="hero-line">Naviguer. Apprendre. Partager.</p>
+        <p class="hero-copy">Un Hanse 315 à taille humaine, pensé pour découvrir la voile, progresser à bord et partager simplement la navigation.</p>
+      </div>
+      <a class="hero-scroll" href="#experience">Faire défiler <span aria-hidden="true">↓</span></a>
+    </section>
+    <section class="section warm" id="experience">
+      <div class="container split">
+        <div class="copy-block reveal">
+          <p class="kicker">01 · L'expérience</p>
+          <h2>La ville derrière.<br><em>La mer devant.</em></h2>
+          <p>Au bout de la Croisette, Port Canto est le point de départ. On quitte les pontons, la baie s'ouvre et les Îles de Lérins se rapprochent.</p>
+          <p>PASSION IV tient en trois mots : naviguer, comprendre, partager. L'idée n'est pas de faire compliqué, mais de vivre la mer simplement, à bord d'un voilier accessible et vivant.</p>
+          <ul class="clean-list">
+            <li>Un voilier personnel, pour naviguer ensemble dans un esprit simple et convivial.</li>
+            <li>Des équipiers de niveaux différents peuvent y trouver leur place.</li>
+            <li>Le programme reste lié au vent, à la météo et aux personnes à bord.</li>
+          </ul>
+        </div>
+        <figure class="media-card reveal zoom-navigation">
+          <picture>
+            <source srcset="assets/images/sailing-v2-480.webp 480w, assets/images/sailing-v2-960.webp 960w, assets/images/sailing-v2-1121.webp 1121w" sizes="(max-width: 820px) 100vw, 48vw">
+            <img src="assets/images/sailing-v2-1121.webp" width="1121" height="1000" alt="PASSION IV naviguant sous voile" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+      </div>
+      <figure class="context-photo bay-scene reveal">
+        <img src="assets/images/baie-cannes-1600.webp" srcset="assets/images/baie-cannes-960.webp 960w, assets/images/baie-cannes-1600.webp 1600w" sizes="(max-width:760px) 100vw, 1060px" width="1600" height="1200" alt="La baie de Cannes vue depuis la Croisette, avec le massif de l'Estérel au fond" loading="lazy" decoding="async">
+      </figure>
+    </section>
+
+    <section class="section deep" id="deroule">
+      <div class="container">
+        <div class="section-head light-text reveal">
+          <div><p class="kicker light">02 · Une sortie, simplement</p><h2>Faire partie<br><em>de la navigation.</em></h2></div>
+          <p>Pas besoin de tout savoir avant de monter à bord. L'important est d'écouter, de comprendre son rôle et de participer à son niveau.</p>
+        </div>
+        <ol class="timeline reveal">
+          <li><span>01</span><div><strong>Se retrouver</strong><p>Le rendez-vous, le programme et les conditions sont confirmés avant le départ.</p></div></li>
+          <li><span>02</span><div><strong>Prendre ses repères</strong><p>On découvre le bateau, les zones où se tenir et les consignes utiles.</p></div></li>
+          <li><span>03</span><div><strong>Naviguer ensemble</strong><p>On observe, on pose des questions et on participe aux manœuvres selon son niveau.</p></div></li>
+          <li><span>04</span><div><strong>Profiter du moment</strong><p>Navigation, pause au mouillage ou repas partagé peuvent trouver leur place selon le programme.</p></div></li>
+        </ol>
+        <p class="fine-print light-text">Ces repères décrivent l'esprit des sorties et ne constituent pas un programme garanti.</p>
+      </div>
+    </section>
+
+    <section class="photo-break reveal" aria-label="Navigation au large des rochers">
+      <picture>
+        <source srcset="assets/images/navigation-rochers-640.webp 640w, assets/images/navigation-rochers-1920.webp 1920w" sizes="100vw">
+        <img src="assets/images/navigation-rochers-1920.webp" width="1920" height="1440" alt="Navigation de PASSION IV au large des rochers" loading="lazy" decoding="async">
+      </picture>
+    </section>
+
+    <section class="section warm" id="voilier">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="kicker">03 · Le voilier</p><h2>PASSION IV.<br><em>Hanse 315.</em></h2></div>
+          <p>Un voilier habitable à taille humaine, pensé pour naviguer, apprendre et partager du temps à bord sans superflu.</p>
+        </div>
+        <div class="boat-facts reveal" aria-label="Repères clés du voilier">
+          <div><strong>Hanse 315</strong><span>Le voilier</span></div>
+          <div><strong>9,62 m</strong><span>Longueur hors tout</span></div>
+          <div><strong>2 cabines</strong><span>À bord</span></div>
+          <div><strong>Port Canto</strong><span>Base à Cannes</span></div>
+        </div>
+
+        <div class="boat-visuals reveal">
+          <figure class="media-card large">
+            <picture>
+              <source srcset="assets/images/cockpit-480.webp 480w, assets/images/cockpit-960.webp 960w, assets/images/cockpit-1600.webp 1600w" sizes="(max-width:820px) 100vw, 58vw">
+              <img src="assets/images/cockpit-1600.webp" width="1600" height="1067" alt="Le cockpit de PASSION IV avec ses deux barres à roue" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <figure class="media-card">
+            <picture>
+              <source srcset="assets/images/cabin-480.webp 480w, assets/images/cabin-960.webp 960w, assets/images/cabin-1600.webp 1600w" sizes="(max-width:820px) 100vw, 36vw">
+              <img src="assets/images/cabin-1600.webp" width="1600" height="1067" alt="Le carré et la cuisine de PASSION IV" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+        </div>
+
+        <div id="caracteristiques" class="spec-wrap reveal">
+          <div class="spec-grid">
+            <article><span class="spec-icon" aria-hidden="true">↔</span><small>Longueur</small><strong>9,62 m</strong></article>
+            <article><span class="spec-icon" aria-hidden="true">⇔</span><small>Largeur</small><strong>3,35 m</strong></article>
+            <article><span class="spec-icon" aria-hidden="true">↧</span><small>Tirant d'eau</small><strong>1,85 m</strong></article>
+            <article><span class="spec-icon" aria-hidden="true">⚙</span><small>Motorisation</small><strong>21 ch</strong></article>
+            <article><span class="spec-icon" aria-hidden="true">⌂</span><small>Aménagement</small><strong>2 cabines</strong></article>
+            <article><span class="spec-icon" aria-hidden="true">≈</span><small>Eau douce</small><strong>env. 210 L</strong></article>
+            <article><span class="spec-icon" aria-hidden="true">◉</span><small>Carburant</small><strong>env. 100 L</strong></article>
+            <article><span class="spec-icon" aria-hidden="true">◁</span><small>Voile d'avant</small><strong>Foc autovireur</strong></article>
+          </div>
+          <p class="source-line source-line-cta"><a href="hanse-315-specification.html"><span aria-hidden="true">↗</span> Consulter la fiche technique du Hanse 315</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section deep" id="chantal">
+      <div class="container split chantal-grid">
+        <div class="copy-block light-text reveal">
+          <p class="kicker light">04 · Chantal</p>
+          <h2>La voile,<br><em>et le plaisir de la partager.</em></h2>
+          <p>Passionnée de voile depuis son enfance, Chantal a navigué sur dériveurs puis sur plusieurs voiliers habitables, comme équipière, propriétaire et chef de bord.</p>
+          <p>Avec PASSION IV, elle souhaite partager ses navigations au départ de Cannes, accueillir différents niveaux et aider chacun à progresser.</p>
+          <p>Au fil des sorties, l'envie est aussi de constituer un équipage qui aime se retrouver.</p>
+        </div>
+        <figure class="media-card portrait-ish reveal">
+          <picture>
+            <source srcset="assets/images/logbook-480.webp 480w, assets/images/logbook-960.webp 960w, assets/images/logbook-1600.webp 1600w" sizes="(max-width:820px) 100vw, 40vw">
+            <img src="assets/images/logbook-1600.webp" width="1600" height="2844" alt="Carnet et jumelles à bord de PASSION IV" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section warm" id="galerie">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="kicker">05 · Galerie</p><h2>Le bateau.<br><em>La mer. Les îles de Lérins.</em></h2></div>
+        </div>
+        <div class="gallery-grid reveal" id="galleryGrid">
+          <button class="gallery-item tall" data-src="assets/images/drone-1920.webp" data-alt="PASSION IV vu du ciel" data-caption="PASSION IV vu du ciel">
+            <img src="assets/images/drone-640.webp" srcset="assets/images/drone-640.webp 640w, assets/images/drone-1280.webp 1280w, assets/images/drone-1920.webp 1920w" sizes="(max-width:760px) 100vw, 34vw" width="1920" height="2844" alt="PASSION IV vu du ciel" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item wide" data-src="assets/images/lerins-1920.webp" data-alt="Les Îles de Lérins vues depuis la mer" data-caption="Les Îles de Lérins">
+            <img src="assets/images/lerins-640.webp" srcset="assets/images/lerins-640.webp 640w, assets/images/lerins-1280.webp 1280w, assets/images/lerins-1920.webp 1920w" sizes="(max-width:760px) 100vw, 64vw" width="1920" height="1080" alt="Les Îles de Lérins vues depuis la mer" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" data-src="assets/images/helm-1600.webp" data-alt="Vue depuis la barre de PASSION IV" data-caption="À la barre">
+            <img src="assets/images/helm-480.webp" srcset="assets/images/helm-480.webp 480w, assets/images/helm-960.webp 960w, assets/images/helm-1600.webp 1600w" sizes="(max-width:760px) 100vw, 32vw" width="1600" height="1067" alt="Vue depuis la barre de PASSION IV" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item tall" data-src="assets/images/underwater-1440.webp" data-alt="Nom PASSION IV vu sous l'eau" data-caption="Sous la ligne de flottaison">
+            <img src="assets/images/underwater-480.webp" srcset="assets/images/underwater-480.webp 480w, assets/images/underwater-960.webp 960w, assets/images/underwater-1440.webp 1440w" sizes="(max-width:760px) 100vw, 32vw" width="1440" height="1920" alt="Nom PASSION IV vu sous l'eau" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item wide" data-src="assets/images/waterline-1600.webp" data-alt="PASSION IV au mouillage vu au ras de l'eau" data-caption="Au mouillage">
+            <img src="assets/images/waterline-480.webp" srcset="assets/images/waterline-480.webp 480w, assets/images/waterline-960.webp 960w, assets/images/waterline-1600.webp 1600w" sizes="(max-width:760px) 100vw, 64vw" width="1600" height="1067" alt="PASSION IV au mouillage vu au ras de l'eau" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" data-src="assets/images/jaune-garde-1920.webp" data-alt="Tourelle de la Jaune Garde vue depuis la mer" data-caption="La Jaune Garde">
+            <img src="assets/images/jaune-garde-640.webp" srcset="assets/images/jaune-garde-640.webp 640w, assets/images/jaune-garde-1920.webp 1920w" sizes="(max-width:760px) 100vw, 32vw" width="1920" height="1440" alt="Tourelle de la Jaune Garde vue depuis la mer" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item wide" data-src="assets/images/les-medes-1920.webp" data-alt="Les Médès vus depuis la mer" data-caption="Les Médès">
+            <img src="assets/images/les-medes-640.webp" srcset="assets/images/les-medes-640.webp 640w, assets/images/les-medes-1920.webp 1920w" sizes="(max-width:760px) 100vw, 64vw" width="1920" height="1440" alt="Les Médès vus depuis la mer" loading="lazy" decoding="async">
+          </button>
+        </div>
+
+        <a class="video-facade reveal" href="https://youtube.com/@chantalpassioniv?si=rc3DKHgRHe3MKu2v" target="_blank" rel="noreferrer" aria-label="Voir les vidéos de Chantal sur YouTube">
+          <picture>
+            <source srcset="assets/images/chantal-barre-640.webp 640w, assets/images/chantal-barre-1280.webp 1280w" sizes="100vw">
+            <img src="assets/images/chantal-barre-1280.webp" width="1280" height="960" alt="À bord de PASSION IV, lien vers la chaîne YouTube de Chantal" loading="lazy" decoding="async">
+          </picture>
+          <span class="play" aria-hidden="true">▶</span>
+          <span class="video-copy"><small>Vidéos</small><strong>Voir la chaîne YouTube de Chantal</strong></span>
+        </a>
+
+        <div class="video-selection reveal" aria-labelledby="video-selection-title">
+          <div class="video-selection-head">
+            <div>
+              <p class="kicker">À voir sur YouTube</p>
+              <h3 id="video-selection-title">Quelques moments de navigation.</h3>
+            </div>
+            <a class="video-channel-link" href="https://www.youtube.com/@chantalpassionIV" target="_blank" rel="noreferrer">Toute la chaîne ↗</a>
+          </div>
+          <div class="video-bubbles">
+            <a class="video-bubble" href="https://www.youtube.com/watch?v=Tfm887WZ960" target="_blank" rel="noreferrer"><span>01</span><strong>Retour de Porquerolles · Cap Roux</strong><small>Croisière · 29 s</small></a>
+            <a class="video-bubble" href="https://www.youtube.com/watch?v=ZwZhuI6RLG8" target="_blank" rel="noreferrer"><span>02</span><strong>Escale à Port-Cros</strong><small>Croisière · 55 s</small></a>
+            <a class="video-bubble" href="https://www.youtube.com/watch?v=511s9v53KC8" target="_blank" rel="noreferrer"><span>03</span><strong>Porquerolles · arrivée sur le Cap des Mèdes</strong><small>Croisière · 40 s</small></a>
+            <a class="video-bubble" href="https://www.youtube.com/watch?v=je0PAlOGr0g" target="_blank" rel="noreferrer"><span>04</span><strong>Au mouillage pour voir l’éclipse</strong><small>Îles de Lérins · 35 s</small></a>
+            <a class="video-bubble" href="https://www.youtube.com/watch?v=GMBgJfl2vmE" target="_blank" rel="noreferrer"><span>05</span><strong>Coucher de soleil entre les îles</strong><small>Îles de Lérins · 1 min 07</small></a>
+            <a class="video-bubble" href="https://www.youtube.com/watch?v=ibX_ytMpUZw" target="_blank" rel="noreferrer"><span>06</span><strong>Soirée entre les îles de Lérins</strong><small>Îles de Lérins · 58 s</small></a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sand" id="debuter">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="kicker">06 · Débuter à bord</p><h2>Dix repères.<br><em>Pas un manuel.</em></h2></div>
+          <p>Des fiches courtes pour arriver avec quelques mots, quelques réflexes et surtout de bonnes questions.</p>
+        </div>
+        <div class="lesson-grid reveal">
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">01</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20"/><path d="M38 26l-7 13-5-13 12 0zM32 8v7m0 34v7M8 32h7m34 0h7"/></svg></span>
+              <span class="lesson-category">Découvrir</span>
+              <strong>Se repérer & vocabulaire</strong>
+              <span class="lesson-teaser">Les mots et les parties du bateau à connaître avant de partir.</span>
+              <span class="lesson-badge">▶ VIDÉO</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Face à l’avant du bateau, bâbord est à gauche et tribord à droite. La proue est l’avant, la poupe l’arrière. Le cockpit est l’espace extérieur où l’on barre et où se déroulent une grande partie des manœuvres.</p>
+            <ul><li>Le mât porte les voiles ; la bôme est la pièce horizontale au pied de la grand-voile.</li><li>Une drisse sert à hisser une voile ; une écoute sert à la régler.</li><li>Repère aussi les taquets, winchs et amarres, sans agir dessus tant que leur rôle n’est pas clair.</li><li>Avant de te déplacer, regarde toujours où peut passer la bôme.</li></ul>
+            <p class="lesson-resources"><a href="https://youtu.be/K8tjtpzXv3g" target="_blank" rel="noreferrer">Voir la vidéo vocabulaire ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">02</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M22 14l10 6 10-6 8 10-5 8v20H19V32l-5-8z"/><path d="M27 20v10h10V20M25 39h14"/></svg></span>
+              <span class="lesson-category">Sécurité</span>
+              <strong>Équipement & sécurité</strong>
+              <span class="lesson-teaser">Les équipements à repérer et les réflexes de base avant le départ.</span>
+              <span class="lesson-badge">▶ VIDÉO · OFFICIEL</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Avant le départ, chacun doit savoir où sont les principaux équipements de sécurité et comment alerter le chef de bord. Le matériel embarqué dépend de la navigation prévue et de l’éloignement d’un abri.</p>
+            <ul><li>Le gilet doit être adapté, correctement fermé et réglé ; la sous-cutale est utilisée lorsqu’il en est équipé.</li><li>Repère la VHF, la bouée de récupération, les extincteurs et la trousse de secours.</li><li>Ne manipule pas un équipement d’urgence “pour essayer” : demande d’abord son fonctionnement.</li><li>À bord, une consigne de sécurité donnée par le chef de bord prime sur le reste.</li></ul>
+            <p class="lesson-resources"><a href="https://youtu.be/anzvYq2iSik" target="_blank" rel="noreferrer">Voir la vidéo sécurité ↗</a><a href="https://www.mer.gouv.fr/le-materiel-darmement-et-de-securite-et-les-limites-dutilisation" target="_blank" rel="noreferrer">Référence officielle ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">03</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 24h26c7 0 7-9 1-9-4 0-6 3-6 5M10 33h38c7 0 7 9 1 9-4 0-6-3-6-5M10 42h20"/></svg></span>
+              <span class="lesson-category">Comprendre</span>
+              <strong>Comprendre le vent</strong>
+              <span class="lesson-teaser">Vent réel, vent apparent et repères simples pour lire ce qui se passe.</span>
+              <span class="lesson-badge">▶ VIDÉO</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Le vent donne le cadre de la navigation à la voile. On distingue le vent réel, lié à la météo, et le vent apparent, celui que l’on ressent sur le bateau : il résulte du vent réel et du déplacement du voilier.</p>
+            <ul><li>Le côté d’où vient le vent est le côté au vent ; l’autre est sous le vent.</li><li>Regarde les girouettes, pennons et la surface de l’eau pour confirmer sa direction.</li><li>Quand le bateau change de cap, l’angle du vent par rapport aux voiles change aussi.</li><li>Comprendre ce repère suffit déjà pour suivre les réglages et les manœuvres.</li></ul>
+            <p class="lesson-resources"><a href="https://youtu.be/sgx40Jkc4tY" target="_blank" rel="noreferrer">Voir la vidéo sur le vent ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">04</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M31 10v41M33 13c11 7 17 17 18 31-8-4-13-5-18-3M29 22c-7 7-11 15-12 25 5-2 9-3 12-2M14 52h40"/></svg></span>
+              <span class="lesson-category">Régler</span>
+              <strong>Allures & réglage des voiles</strong>
+              <span class="lesson-teaser">Comprendre l’angle au vent et ajuster les voiles sans compliquer.</span>
+              <span class="lesson-badge">▶ VIDÉO</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>L’allure décrit l’angle du bateau par rapport au vent : près, travers, largue ou vent arrière. Le réglage des voiles suit cet angle.</p>
+            <ul><li>Quand on se rapproche du vent, on borde généralement les voiles.</li><li>Quand on s’en éloigne, on les choque progressivement.</li><li>Une voile qui faseye manque de tension ; une voile trop bordée peut être moins efficace.</li><li>Le bon réglage se fait par petites corrections, en observant la forme de la voile et la marche du bateau.</li></ul>
+            <p class="lesson-resources"><a href="https://youtu.be/x6Hn9yyIGx8" target="_blank" rel="noreferrer">Voir la vidéo allures & réglage ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">05</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="16"/><circle cx="32" cy="32" r="4"/><path d="M32 8v8m0 32v8M8 32h8m32 0h8M15 15l6 6m22 22 6 6m0-34-6 6M21 43l-6 6"/></svg></span>
+              <span class="lesson-category">Participer</span>
+              <strong>Barrer & changer de cap</strong>
+              <span class="lesson-teaser">Tenir un cap, lofer, abattre et laisser le bateau répondre.</span>
+              <span class="lesson-badge">TEXTE</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>À la barre, regarde loin devant et choisis un repère stable. Le but n’est pas de “tourner le volant”, mais de faire évoluer le bateau avec de petites corrections.</p>
+            <ul><li>Évite les mouvements brusques et laisse au bateau le temps de répondre.</li><li>Lofer signifie rapprocher l’étrave du vent ; abattre signifie s’en éloigner.</li><li>Annonce un changement de cap lorsque quelqu’un travaille sur les voiles ou se déplace.</li><li>Garde toujours une veille autour du bateau : cap, obstacles, autres navires et équipage.</li></ul>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">06</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M16 21h29l-7-7m7 7-7 7M48 43H19l7 7m-7-7 7-7"/></svg></span>
+              <span class="lesson-category">Participer</span>
+              <strong>Virement de bord</strong>
+              <span class="lesson-teaser">L’enchaînement simple pour changer de bord en passant face au vent.</span>
+              <span class="lesson-badge">▶ VIDÉO</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Virer de bord consiste à faire passer l’étrave face au vent pour naviguer sur l’autre bord. La manœuvre commence avant que la barre ne bouge : chacun doit connaître son rôle.</p>
+            <ul><li>Le barreur vérifie l’espace disponible et annonce la manœuvre.</li><li>L’équipage se prépare, surveille la bôme et reste stable.</li><li>Sur PASSION IV, le foc autovireur simplifie le passage de la voile d’avant.</li><li>Après le virement, on stabilise le nouveau cap puis on affine les réglages.</li></ul>
+            <p class="lesson-resources"><a href="https://youtu.be/K250rtTood0" target="_blank" rel="noreferrer">Voir la vidéo virement de bord ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">07</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M19 20c11 0 15 9 7 15-7 5-12-2-7-8 5-6 13-3 16 4 4 10-5 19-16 13-9-5-7-17 3-19 9-2 14 9 5 16"/></svg></span>
+              <span class="lesson-category">Participer</span>
+              <strong>Cordages & nœud de cabestan</strong>
+              <span class="lesson-teaser">Manipuler un cordage sans se mettre en danger et apprendre le cabestan.</span>
+              <span class="lesson-badge">▶ VIDÉO · PDF</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Un cordage sous tension peut transmettre beaucoup d’effort. Avant de le manipuler, identifie ce qu’il commande et où passe sa charge.</p>
+            <ul><li>Ne mets jamais une main, un pied ou un vêtement dans une boucle de cordage.</li><li>N’enroule jamais un cordage autour de ta main ou de ton corps.</li><li>Le cabestan est utile notamment pour fixer un pare-battage ou réaliser une fixation temporaire.</li><li>Entraîne-toi sans charge puis fais vérifier le nœud avant de lui confier un effort.</li></ul>
+            <p class="lesson-resources"><a href="https://www.youtube.com/watch?v=HbqxH4SWIz4" target="_blank" rel="noreferrer">Voir OCEAN SKILLS — cabestan ↗</a><a href="https://www.ggvls.fr/app/download/35376571/N%C5%93ud%2Bde%2Bcabestan.pdf" target="_blank" rel="noreferrer">Fiche PDF cabestan ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">08</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 43h40M17 43V25h8v18m14 0V20h8v23M25 31h14M20 52h24"/><path d="M8 52h48"/></svg></span>
+              <span class="lesson-category">Participer</span>
+              <strong>Départ, arrivée & amarrage</strong>
+              <span class="lesson-teaser">Préparer une manœuvre de port et savoir où se placer.</span>
+              <span class="lesson-badge">▶ 2 VIDÉOS</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Une manœuvre de port se prépare avant de bouger : pare-battages en place, amarres prêtes, trajectoire comprise et rôles répartis.</p>
+            <ul><li>Reste dans la zone indiquée et garde les mains et les pieds à bord.</li><li>Un pare-battage protège le bateau ; ton corps ne doit jamais servir de pare-battage.</li><li>Ne saute pas sur le quai : attends que le bateau soit stabilisé et que l’on te dise de descendre.</li><li>Après l’amarrage, vérifie les amarres sans te placer dans leur axe de tension.</li></ul>
+            <p class="lesson-resources"><a href="https://www.youtube.com/watch?v=UuymaAGJ4yA" target="_blank" rel="noreferrer">Départ d’un catway ↗</a><a href="https://www.youtube.com/watch?v=fS3t7umjrSQ" target="_blank" rel="noreferrer">Arrivée sur un catway ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">09</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="18"/><circle cx="32" cy="32" r="8"/><path d="M19 19l7 7m12 12 7 7m0-26-7 7M26 38l-7 7"/></svg></span>
+              <span class="lesson-category">Sécurité</span>
+              <strong>Homme à la mer</strong>
+              <span class="lesson-teaser">Les premières secondes comptent : alerter, pointer et garder la personne en vue.</span>
+              <span class="lesson-badge">▶ VIDÉO · GUIDE</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Si quelqu’un tombe à l’eau, la priorité immédiate est de donner l’alerte et de ne jamais perdre la personne de vue. Le chef de bord dirige ensuite la récupération.</p>
+            <ul><li>Crie immédiatement « personne à la mer » et désigne la victime du doigt en continu.</li><li>Lance un moyen de flottabilité ou de repérage si cela peut être fait sans danger.</li><li>Ne saute pas à l’eau sauf situation exceptionnelle décidée par le chef de bord.</li><li>La récupération se prépare et s’entraîne : une ligne de type life-sling peut aider à ramener la personne au bateau.</li></ul>
+            <p class="lesson-resources"><a href="https://youtu.be/UEQ0sFLPgKE" target="_blank" rel="noreferrer">Voir la vidéo homme à la mer ↗</a><a href="https://www.ffvoile.fr/ffv/web/services/securite/documents/Guide_securimar_2023.pdf#page=26" target="_blank" rel="noreferrer">Guide FFVoile — repère p. 26 ↗</a></p>
+            </div>
+          </details>
+          <details class="lesson-card">
+            <summary>
+              <span class="lesson-number">10</span>
+              <span class="lesson-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="15" r="5"/><path d="M32 20v30M20 30h24M15 40c4 9 9 13 17 13s13-4 17-13M15 40h-6m40 0h6"/></svg></span>
+              <span class="lesson-category">Comprendre</span>
+              <strong>Mouillage & préparation</strong>
+              <span class="lesson-teaser">Choisir son mouillage, surveiller l’évitage et préparer la sortie.</span>
+              <span class="lesson-badge">▶ 2 VIDÉOS</span>
+              <span class="lesson-open" aria-hidden="true">＋</span>
+            </summary>
+            <div class="lesson-body">
+            <p>Un bon mouillage commence par le choix du lieu : profondeur, nature du fond, vent, courant, espace d’évitage et évolution de la météo. Une fois l’ancre posée, il faut vérifier que le bateau ne chasse pas.</p>
+            <ul><li>Reste éloigné de la chaîne, du guindeau et de l’ancre pendant la manœuvre.</li><li>Le bateau peut tourner autour de son ancre : garde suffisamment d’espace autour de lui.</li><li>Évite de mouiller sur les herbiers et respecte les zones réglementées.</li><li>Avant la sortie, vérifie météo, eau, protection solaire, vêtements adaptés et point de rendez-vous.</li></ul>
+            <p class="lesson-resources"><a href="https://youtu.be/3lDBHw9jXng" target="_blank" rel="noreferrer">Voir la vidéo mouillage ↗</a><a href="https://www.youtube.com/watch?v=je0PAlOGr0g" target="_blank" rel="noreferrer">PASSION IV au mouillage ↗</a></p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm" id="faq">
+      <div class="container split top-align">
+        <div class="copy-block reveal">
+          <p class="kicker">07 · Première fois à bord</p>
+          <h2>Tu peux commencer<br><em>par une question.</em></h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary>Dois-je déjà savoir naviguer ?</summary><p>Chantal souhaite réunir des équipiers de différents niveaux. Signale simplement ton expérience et tes questions. La participation et le programme se décident selon les conditions et les personnes à bord.</p></details>
+          <details><summary>Comment m'habiller ?</summary><p>Prévois plusieurs couches légères, une protection contre le vent et des chaussures qui accrochent. Chapeau, lunettes et protection solaire sont utiles ; il peut faire plus frais sur l'eau qu'à terre.</p></details>
+          <details><summary>Que dois-je apporter ?</summary><p>Un petit sac souple, de l'eau, tes affaires personnelles utiles et une protection contre le soleil. Pour le repas ou une éventuelle baignade, les modalités se confirment avant la sortie.</p></details>
+          <details><summary>Comment se passe l'arrivée à bord ?</summary><p>Confirme d'abord l'heure et le point de rendez-vous. Attends les indications pour embarquer, puis prends le temps de repérer les endroits où te tenir et d'écouter les consignes.</p></details>
+          <details><summary>Puis-je participer aux manœuvres ?</summary><p>Oui. L'idée est de participer et de progresser ensemble. Le chef de bord répartit les rôles. Commence par observer, pose tes questions et n'agis sur un cordage que lorsque tu as compris la consigne.</p></details>
+          <details><summary>Quels mots dois-je connaître ?</summary><p>Bâbord, tribord, écoute, drisse… quelques mots suffisent pour commencer. Les dix repères ci-dessus permettent d'arriver avec un vocabulaire de base.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section deep" id="pratique">
+      <div class="container">
+        <div class="section-head light-text reveal">
+          <div><p class="kicker light">08 · Infos pratiques</p><h2>Rendez-vous<br><em>à Cannes.</em></h2></div>
+        </div>
+        <div class="practical-grid reveal">
+          <article><div class="practical-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><span>01</span><h3>Port Canto</h3><p>PASSION IV est basé à Port Canto, sur la Croisette à Cannes. Le point précis de rendez-vous est confirmé avant chaque sortie.</p><div class="practical-links"><a href="https://www.google.com/maps/search/?api=1&query=Port+Canto+Cannes" target="_blank" rel="noreferrer">Ouvrir dans Google Maps ↗</a><a href="https://www.cannes.com/fr/cadre-de-vie/plages-mer-nautisme/ports-de-cannes/port-canto.html" target="_blank" rel="noreferrer">Port Canto — Ville de Cannes ↗</a></div></article>
+          <article><div class="practical-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg></div><span>02</span><h3>Venir & stationner</h3><p>Le parking Pierre Canto est à proximité. Vérifie les conditions, les horaires et la disponibilité avant ton déplacement.</p><div class="practical-links"><a href="https://www.google.com/maps/search/?api=1&query=Parking+Pierre+Canto+Cannes" target="_blank" rel="noreferrer">Itinéraire Google Maps ↗</a><a href="https://www.cannes.com/fr/mairie/annuaire-pratique/equipements-municipaux/parking-pierre-canto.html" target="_blank" rel="noreferrer">Informations municipales ↗</a></div></article>
+          <article><div class="practical-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4l4 2 4-2 4 3-2.5 3.5L16 10v10H8V10l-1.5.5L4 7z"/></svg></div><span>03</span><h3>Tenue</h3><p>Privilégie des vêtements confortables, plusieurs couches, une protection contre le vent et des chaussures qui accrochent.</p><p class="practical-note">Sur l’eau, il peut faire sensiblement plus frais qu’à terre.</p></article>
+          <article><div class="practical-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 12H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div><span>04</span><h3>À emporter</h3><p>De l’eau, une protection solaire, tes affaires utiles et un petit sac souple plutôt qu’une valise rigide.</p><p class="practical-note">Évite de multiplier les objets encombrants dans le cockpit.</p></article>
+          <article><div class="practical-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8h10a2.5 2.5 0 1 0-2.5-2.5M3 12h15a2.5 2.5 0 1 1-2.5 2.5M3 16h7"/></svg></div><span>05</span><h3>Météo</h3><p>Le vent, l’état de la mer et la météo peuvent modifier le programme ou conduire à annuler une navigation.</p><div class="practical-links"><a href="https://meteofrance.com/meteo-marine" target="_blank" rel="noreferrer">Consulter Météo-France marine ↗</a></div></article>
+          <article><div class="practical-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v13M8 11h8M5 14c.5 3.5 3.5 6 7 6s6.5-2.5 7-6M5 14H3m18 0h-2"/></svg></div><span>06</span><h3>À bord</h3><p>Repas, baignade éventuelle et participation aux frais doivent être précisés pour chaque sortie avant le départ.</p><p class="practical-note">En cas de doute, demande simplement avant de venir.</p></article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>PASSION IV</strong><p>Naviguer, apprendre et partager au départ de Cannes.</p></div>
+      <div><strong>Repères</strong><a href="#voilier">Le voilier</a><a href="#debuter">Débuter</a><a href="#pratique">Infos pratiques</a></div>
+      <div><strong>Sources</strong><a href="hanse-315-specification.html">Hanse 315</a><a href="https://www.cannes.com/fr/cadre-de-vie/plages-mer-nautisme/ports-de-cannes/port-canto.html" target="_blank" rel="noreferrer">Port Canto ↗</a><a href="https://commons.wikimedia.org/wiki/File:Baie_de_Cannes_depuis_La_Croisette_(avril_2023).JPG" target="_blank" rel="noreferrer">Photo Cannes · B. Prieur · CC0 ↗</a></div>
+      <div><strong>Légal</strong><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> PASSION IV</span><a href="#top">Retour en haut ↑</a></div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Revenir en haut de page">↑</button>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxCaption">
+    <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
+    <button class="lightbox-nav prev" type="button" aria-label="Image précédente">←</button>
+    <figure><img id="lightboxImage" alt=""><figcaption id="lightboxCaption"></figcaption></figure>
+    <button class="lightbox-nav next" type="button" aria-label="Image suivante">→</button>
+  </dialog>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
