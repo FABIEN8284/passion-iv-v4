@@ -773,3 +773,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   /* Déplacer le contenu de la photo vers la droite afin de dégager le texte à gauche. */
   .hero-media img{object-position:32% 48%;}
 }
+
+
+/* TEST-RICH — correction carte cabine + restauration icônes pratiques */
+.boat-visuals .media-card:not(.large){
+  align-self:start;
+}
+.boat-visuals .media-card:not(.large)>picture{
+  aspect-ratio:4/3;
+}
+.practical-icon{
+  border-radius:50%;
+  font:500 23px/1 var(--serif);
+  color:#f0d5bd;
+}
