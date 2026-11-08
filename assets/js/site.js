@@ -69,6 +69,51 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
   qsa('.reveal').forEach(el => el.classList.add('revealed'));
 }
 
+
+
+/* Morphing Cannes au scroll ------------------------------------------------ */
+const cannesShowcase = qs('.cannes-showcase');
+let cannesFrame = 0;
+
+function updateCannesMorph() {
+  cannesFrame = 0;
+  if (!cannesShowcase) return;
+
+  if (reducedMotion) {
+    cannesShowcase.style.setProperty('--sunset-progress', '.55');
+    cannesShowcase.classList.add('is-sunset');
+    return;
+  }
+
+  const rect = cannesShowcase.getBoundingClientRect();
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+
+  // Transition volontairement courte : environ 34 % de la hauteur d'écran.
+  const start = vh * .82;
+  const end = vh * .48;
+  const raw = (start - rect.top) / (start - end);
+  const progress = Math.max(0, Math.min(1, raw));
+
+  // Courbe plus nerveuse qu'un fondu linéaire, sans rupture visuelle.
+  const eased = progress < .5
+    ? 2 * progress * progress
+    : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+  cannesShowcase.style.setProperty('--sunset-progress', eased.toFixed(3));
+  cannesShowcase.classList.toggle('is-sunset', eased > .58);
+}
+
+function requestCannesMorph() {
+  if (cannesFrame) return;
+  cannesFrame = requestAnimationFrame(updateCannesMorph);
+}
+
+if (cannesShowcase) {
+  window.addEventListener('scroll', requestCannesMorph, {passive:true});
+  window.addEventListener('resize', requestCannesMorph);
+  updateCannesMorph();
+}
+
 /* Lightbox --------------------------------------------------------------- */
 const lightbox = qs('#lightbox');
 const lightboxImage = qs('#lightboxImage');
