@@ -261,3 +261,179 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .practical-grid.revealed article{animation:none}
   .practical-grid article,.practical-grid article::after,.lesson-resources a{transition:none}
 }
+
+
+/* TEST-RICH — lot visuel V2 : icônes app, vidéos fortes, zoom et effet cinéma ---- */
+
+/* 01 — Icônes façon mini-app dans les cartes pratiques */
+.practical-icon{
+  width:52px;
+  height:52px;
+  margin-bottom:20px;
+  border-radius:16px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.055));
+  border:1px solid rgba(255,255,255,.22);
+  color:#f4d7be;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.15),
+    0 9px 24px rgba(0,0,0,.12);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  transition:transform .28s cubic-bezier(.2,.7,.2,1),background .28s ease,box-shadow .28s ease;
+}
+.practical-grid article:hover .practical-icon{
+  transform:translateY(-3px) rotate(-2deg) scale(1.06);
+  background:
+    linear-gradient(145deg,rgba(213,165,127,.3),rgba(255,255,255,.08));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.2),
+    0 13px 30px rgba(0,0,0,.17);
+}
+
+/* 02 — Les vidéos deviennent de vraies cartes d’action */
+.lesson-resources{
+  gap:10px;
+  margin-top:20px!important;
+}
+.lesson-resources a[href*="youtu"],
+.lesson-resources a[href*="youtube"]{
+  min-height:56px;
+  padding:9px 17px 9px 9px;
+  gap:10px;
+  border:1px solid rgba(11,36,52,.18);
+  border-radius:17px;
+  background:
+    linear-gradient(135deg,var(--marine),#173f52);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(11,36,52,.16);
+  font-size:11px;
+  letter-spacing:.025em;
+}
+.lesson-resources a[href*="youtu"]::before,
+.lesson-resources a[href*="youtube"]::before{
+  content:"▶";
+  flex:0 0 auto;
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  padding-left:2px;
+  box-shadow:0 0 0 5px rgba(185,121,73,.12);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.lesson-resources a[href*="youtu"]:hover,
+.lesson-resources a[href*="youtube"]:hover{
+  transform:translateY(-3px);
+  border-color:rgba(185,121,73,.62);
+  background:
+    linear-gradient(135deg,#0d2c3e,#1a485d);
+  box-shadow:0 16px 32px rgba(11,36,52,.22);
+}
+.lesson-resources a[href*="youtu"]:hover::before,
+.lesson-resources a[href*="youtube"]:hover::before{
+  transform:scale(1.08);
+  box-shadow:0 0 0 7px rgba(185,121,73,.14);
+}
+
+/* Documents et références : visuels, mais secondaires par rapport aux vidéos */
+.lesson-resources a:not([href*="youtu"]):not([href*="youtube"]){
+  min-height:46px;
+  padding:10px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(11,36,52,.16);
+  box-shadow:0 5px 15px rgba(11,36,52,.06);
+}
+.lesson-resources a:not([href*="youtu"]):not([href*="youtube"])::before{
+  content:"↗";
+  width:26px;
+  height:26px;
+  display:grid;
+  place-items:center;
+  margin-right:8px;
+  border-radius:9px;
+  background:rgba(185,121,73,.13);
+  color:var(--accent);
+  font-size:12px;
+}
+
+/* 03 — Zoom navigation plus ample et plus immersif */
+.zoom-navigation img{
+  animation:navigation-zoom-strong 11s ease-in-out infinite alternate;
+  transform-origin:52% 48%;
+}
+@keyframes navigation-zoom-strong{
+  from{transform:scale(1.02) translate3d(0,0,0)}
+  to{transform:scale(1.18) translate3d(1.2%,-1.1%,0)}
+}
+
+/* 04 — Photo de Cannes : effet cinéma / lumière douce */
+.cannes-showcase{
+  isolation:isolate;
+  border:1px solid rgba(11,36,52,.08);
+  box-shadow:
+    0 28px 80px rgba(10,36,52,.18),
+    0 2px 0 rgba(255,255,255,.72) inset;
+}
+.cannes-showcase::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:-22%;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 24%,rgba(255,255,255,.26),transparent 28%),
+    radial-gradient(circle at 82% 72%,rgba(87,175,215,.16),transparent 34%);
+  mix-blend-mode:soft-light;
+  opacity:.72;
+  transform:translate3d(-4%,1%,0) rotate(-3deg);
+  animation:cannes-glow 10s ease-in-out infinite alternate;
+}
+.cannes-showcase::after{
+  z-index:1;
+  background:
+    linear-gradient(180deg,rgba(7,27,39,.01) 45%,rgba(7,27,39,.26) 100%),
+    linear-gradient(90deg,rgba(255,255,255,.05),transparent 34%,rgba(7,27,39,.05));
+}
+.cannes-showcase img{
+  filter:saturate(1.04) contrast(1.055) brightness(1.015);
+  animation:cannes-cinematic 13s ease-in-out infinite alternate;
+  transform-origin:53% 58%;
+}
+.cannes-showcase figcaption{
+  z-index:3;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 8px 24px rgba(5,24,34,.14);
+}
+@keyframes cannes-cinematic{
+  from{transform:scale(1.025) translate3d(-.8%,.2%,0)}
+  to{transform:scale(1.135) translate3d(1.2%,-1.3%,0)}
+}
+@keyframes cannes-glow{
+  from{transform:translate3d(-5%,1%,0) rotate(-3deg);opacity:.52}
+  to{transform:translate3d(5%,-2%,0) rotate(2deg);opacity:.88}
+}
+
+@media(max-width:760px){
+  .practical-icon{width:48px;height:48px;border-radius:15px}
+  .lesson-resources a[href*="youtu"],
+  .lesson-resources a[href*="youtube"]{
+    width:100%;
+    min-height:54px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .zoom-navigation img,
+  .cannes-showcase img,
+  .cannes-showcase::before{animation:none;transform:none}
+  .practical-icon,
+  .lesson-resources a,
+  .lesson-resources a::before{transition:none}
+}
