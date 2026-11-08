@@ -790,3 +790,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
     .bay-scene img{animation:bay-zoom linear backwards;animation-timeline:view();animation-range:entry 0% entry 100%}
   }
 }
+
+/* GALERIE — cadrage Îles de Lérins : montrer davantage la mer */
+.gallery-item[data-src="assets/images/lerins-1920.webp"] img{object-position:center 78%}
