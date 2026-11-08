@@ -806,3 +806,30 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
       linear-gradient(0deg,rgba(3,17,26,.30),transparent 42%);
   }
 }
+
+
+/* TEST-RICH — hero V3 : déplacement réel du calque photo, texte totalement dégagé */
+@media(min-width:1200px){
+  .hero-media{
+    left:18%;
+    right:-18%;
+    overflow:hidden;
+  }
+  .hero-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 48%;
+  }
+  .hero-shade{
+    background:
+      linear-gradient(90deg,
+        rgba(2,15,24,.94) 0%,
+        rgba(2,15,24,.84) 25%,
+        rgba(2,15,24,.64) 39%,
+        rgba(2,15,24,.34) 50%,
+        rgba(2,15,24,.12) 60%,
+        rgba(2,15,24,0) 73%),
+      linear-gradient(0deg,rgba(3,17,26,.28),transparent 42%);
+  }
+}
