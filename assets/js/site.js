@@ -69,6 +69,25 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
   qsa('.reveal').forEach(el => el.classList.add('revealed'));
 }
 
+
+/* Animation des grands titres ------------------------------------------------ */
+const animatedTitles = qsa('.animated-section-title');
+if (animatedTitles.length) {
+  if (!reducedMotion && 'IntersectionObserver' in window) {
+    const titleObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('title-visible');
+          titleObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.5, rootMargin:'0px 0px -8% 0px'});
+    animatedTitles.forEach(title => titleObserver.observe(title));
+  } else {
+    animatedTitles.forEach(title => title.classList.add('title-visible'));
+  }
+}
+
 /* Lightbox --------------------------------------------------------------- */
 const lightbox = qs('#lightbox');
 const lightboxImage = qs('#lightboxImage');
