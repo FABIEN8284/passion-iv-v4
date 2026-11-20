@@ -824,6 +824,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .practical-scene .container{position:relative;z-index:1}
 @media (max-width:960px){
   .practical-scene::before{
+    background-image:url('../images/port-canto-bg-960.webp');
     filter:blur(5px) saturate(1.05) brightness(.86);
     opacity:.84;
   }
