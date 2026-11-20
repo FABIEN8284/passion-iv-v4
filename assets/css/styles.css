@@ -876,7 +876,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .manual-scene::before{
     background:
       linear-gradient(rgba(229,218,201,.74),rgba(229,218,201,.74)),
-      url('../images/esterel-blur-bg-1600.webp') center center / cover no-repeat;
+      url('../images/esterel-blur-bg-960.webp') center center / cover no-repeat;
     filter:blur(2.5px) saturate(.9);
   }
 }
+
+/* Section YouTube autonome */
+.youtube-section .video-facade{margin-top:0}
